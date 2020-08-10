@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu mở rộng</title>
+</head>
+<body>
+    <form>
+        <h1>Caculator</h1>
+        <input type="text" name="nhapso" id="nhapso" style="width: 150px; margin-right: 20px">
+        <input type="text" name="nhapso" id="nhapso2" style="width: 150px"><br><br>
+        <input type="button" name="Caculator" value="Caculator" onclick="caculator()">
+        <p id="result"></p>
+    </form>
+    <script>
+        function caculator() {
+
+            let a = document.getElementById("nhapso").value;
+            let b = document.getElementById("nhapso2").value;
+            let so1 = Number.parseInt(document.getElementById("nhapso").value);
+            let so2 = Number.parseInt(document.getElementById("nhapso2").value);
+            let pheptinh = prompt("Nhập vào phép tính : Cộng (+), Trừ (-), Nhân (*), Chia (/)");
+            phepTinh(pheptinh);
+            function phepTinh(pheptinh) {
+                if (pheptinh == "+") {
+                    if (String(so1 + so2) == "NaN" || a.length != (so1.toString().length) || b.length != (so2.toString().length)) {
+                        document.getElementById("result").innerHTML = "";
+                        alert("Chỉ nhập số");
+                    } else {
+                        so1 = Number.parseInt(document.getElementById("nhapso").value);
+                        so2 = Number.parseInt(document.getElementById("nhapso2").value);
+                        document.getElementById("result").innerHTML = so1 + so2;
+                    }
+                } else if (pheptinh == "-") {
+                    if (String(so1 - so2) == "NaN" || a.length != (so1.toString().length) || b.length != (so2.toString().length)) {
+                        document.getElementById("result").innerHTML = "";
+                        alert("Chỉ nhập số");
+                    } else {
+                        so1 = Number.parseInt(document.getElementById("nhapso").value);
+                        so2 = Number.parseInt(document.getElementById("nhapso2").value);
+                        document.getElementById("result").innerHTML = so1 - so2;
+                    }
+                } else if (pheptinh == "*") {
+                    if (String(so1 * so2) == "NaN" || a.length != (so1.toString().length) || b.length != (so2.toString().length)) {
+                        document.getElementById("result").innerHTML = "";
+                        alert("Chỉ nhập số");
+                    } else {
+                        so1 = Number.parseInt(document.getElementById("nhapso").value);
+                        so2 = Number.parseInt(document.getElementById("nhapso2").value);
+                        document.getElementById("result").innerHTML = so1 * so2;
+                    }
+                } else if (pheptinh == "/") {
+                    if (String(so1 / so2) == "NaN" || a.length != (so1.toString().length) || b.length != (so2.toString().length)) {
+                        document.getElementById("result").innerHTML = "";
+                        alert("Chỉ nhập số");
+                    } else {
+                        so1 = Number.parseInt(document.getElementById("nhapso").value);
+                        so2 = Number.parseInt(document.getElementById("nhapso2").value);
+                        document.getElementById("result").innerHTML = so1 / so2;
+                    }
+                }else {
+                    let nhaplai = prompt("Hãy nhập lại phép tính");
+                    phepTinh(nhaplai);
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
